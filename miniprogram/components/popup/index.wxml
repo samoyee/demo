@@ -1,0 +1,30 @@
+<root-portal>
+    <wux-popup
+        model:visible="{{visible}}"
+        position="bottom"
+        wux-content-class="{{['popup-content', fullScreen ? 'fullscreen' : '']}}"
+        mask-closable="{{!showHeader}}"
+        bind:close="onCancel"
+        bind:closed="afterClose"
+    >
+        <view
+            wx:if="{{showHeader}}"
+            class="popup-header"
+        >
+            <view
+                class="popup-cancel"
+                bindtap="onCancel"
+            >
+                取消
+            </view>
+            <view
+                class="popup-submit"
+                bindtap="onConfirm"
+            >
+                确认
+            </view>
+        </view>
+        <slot />
+        <view class="safe-area" />
+    </wux-popup>
+</root-portal>

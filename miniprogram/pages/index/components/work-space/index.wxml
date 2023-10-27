@@ -1,0 +1,80 @@
+<scroll-view
+    scroll-y
+    class="page"
+>
+    <view class="welcome">
+        <view class="top">
+            <view class="text">欢迎您，</view>
+            <text class="name">张君</text>
+        </view>
+        <view class="text">今天是2023-08-05 周五</view>
+    </view>
+    <navigator
+        class="search"
+        open-type="navigate"
+        url="/modules/admin/pages/patient-search/index"
+    >
+        <icon type="search" />
+        <view class="search-placeholder">请输入就诊人姓名或手机号查询</view>
+    </navigator>
+
+    <view class="appoint">
+        <div class="tabs">
+            <view class="tab active">今日预约</view>
+            <view class="tab">明日预约</view>
+        </div>
+        <view class="count">
+            今日预约人数<view class="total">12</view>人 ，已到院<view class="has">4</view>人
+        </view>
+        <scroll-view
+            scroll-x
+            class="list"
+        >
+            <view
+                wx:for="{{10}}"
+                wx:key="index"
+                class="card"
+            >
+                <view class="patient">
+                    <image class="avatar" />
+                    <view class="info">
+                        <view class="name">许骜<view class="age">23岁</view>
+                        </view>
+                        <view class="phone">186-1234-5678</view>
+                    </view>
+                </view>
+                <view class="project">
+                    <icon type="todo" />
+                    <view class="project-name">激光手术复查</view>
+                </view>
+            </view>
+        </scroll-view>
+    </view>
+
+    <view class="operation">
+        <view class="title">
+            今日手术
+        </view>
+        <swiper
+            class="operation-swiper"
+            previous-margin="60rpx"
+            next-margin="60rpx"
+        >
+            <swiper-item
+                wx:for="{{10}}"
+                wx:key="index"
+            >
+                <view class="card">
+                    <view class="status">待手术 | 手术结束</view>
+                    <view>激光手术</view>
+                    <view>9:00-11:00</view>
+                    <view>许骜</view>
+                    <view>23岁</view>
+                    <view>186-6719-8030</view>
+                    <view class="doctor">张君</view>
+                    <view class="nurse">护士A</view>
+                </view>
+            </swiper-item>
+        </swiper>
+    </view>
+</scroll-view>

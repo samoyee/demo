@@ -1,0 +1,15 @@
+{
+    "navigationBarTitleText": "就诊人信息",
+    "usingComponents": {
+      "default-page": "/components/default-page/index",
+      "fixed-footer": "/components/fixed-footer/index",
+      "zz-form": "/components/zz-form/index",
+      "zz-form-item": "/components/zz-form-item/index",
+      "zz-form-input": "/components/zz-form-input/index",
+      "zz-form-textarea": "/components/zz-form-textarea/index",
+      "zz-form-select": "/components/zz-form-select/index",
+      "zz-form-date": "/components/zz-form-date/index",
+      "zz-form-address": "/components/zz-form-address/index"
+    }
+  }
+  

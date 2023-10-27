@@ -1,0 +1,42 @@
+<view class="shop__fixed">
+    <search-bar
+        value="{{searchKey}}"
+        bind:search="onSearch"
+        placeholder="请输入关键字查询"
+    />
+</view>
+<refresher
+    id="shop-refresher"
+    scroll-class="shop__scroll"
+    bind:pulling="onPulling"
+    bind:refresh="onRefresh"
+    bind:loadmore="onLoadmore"
+    has-more="{{hasMore}}"
+>
+    <default-page
+        wx:if="{{showError}}"
+        errorType="{{errorType}}"
+        errorMsg="{{errorMsg}}"
+    />
+    <view wx:else>
+        <shop-item
+            wx:for="{{list}}"
+            wx:key="id"
+            item="{{item}}"
+        />
+        <block wx:if="{{list.length > 0}}">
+            <view
+                wx:if="{{!hasMore}}"
+                class="shop__has_more"
+            >
+                没有更多数据
+            </view>
+            <view
+                wx:else
+                class="shop__has_more"
+            >
+                加载更多
+            </view>
+        </block>
+    </view>
+</refresher>

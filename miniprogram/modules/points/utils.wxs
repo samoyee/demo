@@ -1,0 +1,33 @@
+function padStart(num, length) {
+    if ((num + "").length >= length) {
+        return num;
+    }
+    return padStart("0" + num, length)
+}
+
+module.exports = {
+    time: ["上午（8:30-11:30）", "下午（13:00-16:00）"],
+    activeDate: function (activeDateMap, today, currentMonth, date) {
+        if (activeDateMap && activeDateMap[currentMonth + '-' + padStart(date, 2)])
+            return 'active'
+        if ((currentMonth + '-' + padStart(date, 2)) < today) {
+            return 'disabled'
+        }
+        return ''
+    },
+    activeText: function (today, currentMonth, date) {
+        return today === (currentMonth + '-' + padStart(date, 2)) ? '今日已签到' : '已签到'
+    },
+    getStatus: function (status) {
+        if (status === '1') return '待领取';
+        if (status === '2') return '已完成';
+        if (status === '3') return '已过期';
+        return ''
+    },
+    getStatusClass: function (status) {
+        if (status === '1') return 'wait';
+        if (status === '2') return 'complete';
+        if (status === '3') return 'expire';
+        return ''
+    }
+}

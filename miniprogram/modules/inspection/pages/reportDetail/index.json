@@ -1,0 +1,6 @@
+{
+  "navigationBarTitleText": "常规检查",
+  "usingComponents": {
+    "default-page": "/components/default-page/index"
+  }
+}

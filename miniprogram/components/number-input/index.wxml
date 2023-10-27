@@ -1,0 +1,17 @@
+<view class="number-input input-class {{disabled ? 'disabled' : ''}}">
+    <input
+        class="input-placeholder"
+        value="{{placeholderValue}}"
+        disabled
+    />
+    <input
+        class="input"
+        type="digit"
+        model:value="{{value}}"
+        placeholder="{{placeholder}}"
+        placeholder-class="input-placeholder"
+        maxlength="10"
+        bindinput="onInput"
+        disabled="{{disabled}}"
+    />
+</view>

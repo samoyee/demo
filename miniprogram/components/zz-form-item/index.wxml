@@ -1,0 +1,20 @@
+<view class="zz-form-item">
+    <view
+        wx:if="{{label}}"
+        class="zz-form-item__label"
+    >
+        <span wx:if="{{required}}" class="zz-form-item__required">*</span>
+        {{label}}
+    </view>
+    <view class="zz-form-item__content">
+        <view class="zz-form-item__input">
+            <slot />
+        </view>
+        <view
+            wx:if="{{error}}"
+            class="zz-form-item__error"
+        >
+            {{error}}
+        </view>
+    </view>
+</view>

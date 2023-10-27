@@ -1,0 +1,24 @@
+.select-scroll {
+  max-height: 50vh;
+}
+
+.select-item {
+  height: 100rpx;
+  line-height: 100rpx;
+  padding: 0 40rpx;
+  font-size: 36rpx;
+  &.hover {
+    background-color: #fafafa;
+  }
+  &.disabled {
+    background-color: #f0f0f0;
+    color: #999;
+  }
+  & + .select-item {
+    border-top: 1px solid #f0f0f0;
+  }
+}
+
+.zz-form-input-placeholder {
+    color: rgba(39, 61, 82, 0.3);
+}

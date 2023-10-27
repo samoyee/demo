@@ -1,0 +1,78 @@
+<view class="calendar-yearMonth-header">
+    <view
+        class="calendar-yearMonth-prev"
+        bindtap="onPrevMonth"
+    >
+        <icon
+            type="arrow-left"
+            size="32"
+        />
+    </view>
+    <view bindtap="onYearMonthOpen">{{year}}年{{month}}月</view>
+    <view
+        class="calendar-yearMonth-next"
+        bindtap="onNextMonth"
+    >
+        <icon
+            type="arrow-right"
+            size="32"
+        />
+    </view>
+</view>
+
+<view class="calendar-container">
+    <view class="calendar-header">
+        <view class="calendar-item">日</view>
+        <view class="calendar-item">一</view>
+        <view class="calendar-item">二</view>
+        <view class="calendar-item">三</view>
+        <view class="calendar-item">四</view>
+        <view class="calendar-item">五</view>
+        <view class="calendar-item">六</view>
+    </view>
+    <view class="calendar-body">
+        <view
+            wx:for="{{firstWeek}}"
+            wx:key="index"
+            class="calendar-item"
+        />
+        <view
+            wx:for="{{monthDates}}"
+            wx:key="index"
+            class="{{['calendar-item', value === item.value ? 'active':'', item.disabled ? 'disabled':'']}}"
+            data-value="{{item.value}}"
+            data-disabled="{{item.disabled}}"
+            bindtap="onSelect"
+        >{{item.date}}</view>
+    </view>
+</view>
+
+<popup
+    model:visible="{{open}}"
+    bind:confirm="onYearMonthConfirm"
+    bind:cancel="onYearMonthCancel"
+>
+    <picker-view
+        value="{{yearMonthValue}}"
+        class="calendar-month-picker"
+        bindpickstart="onYearMonthChangeReadyStart"
+        bindpickend="onYearMonthChangeReadyEnd"
+        bind:change="onYearMonthChange"
+        indicator-class="calendar-month-picker-indicator"
+    >
+        <picker-view-column>
+            <view
+                wx:for="{{years}}"
+                wx:key="index"
+                class="calendar-month-picker-item"
+            >{{item}}年</view>
+        </picker-view-column>
+        <picker-view-column>
+            <view
+                wx:for="{{12}}"
+                wx:key="index"
+                class="calendar-month-picker-item"
+            >{{item + 1}}月</view>
+        </picker-view-column>
+    </picker-view>
+</popup>

@@ -1,0 +1,27 @@
+<wxs src="../../../../utils.wxs" module="utils" />
+
+<view class="exchange-item">
+    <view class="exchange-item__header">
+        <view>兑换时间：</view>
+        <view class="exchange-item__status {{utils.getStatusClass(item.status)}}">{{utils.getStatus(item.status)}}</view>
+    </view>
+    <view class="exchange-item__body">
+        <image src="{{item.shopInfo.path}}" lazy-load class="exchange-item__cover" mode="widthFix" />
+        <view class="exchange-item__content">
+            <view class="exchange-item__title">{{item.shopInfo.name}}</view>
+            <view class="exchange-item__info">过期时间：{{item.expiryTime}}</view>
+        </view>
+        <view class="exchange-item__right">
+            <view class="exchange-item__score">
+                <icon type="round-diamond" color="#000000" size="36" />{{item.shopInfo.score}}
+            </view>
+        </view>
+    </view>
+    <view class="exchange-item__footer">
+        <view class="exchange-item__count">共计1件商品</view>
+        <!-- <view class="exchange-item__buttons">
+            <view wx:if="{{item.status !== '1'}}" class="exchange-item__btn" bindtap="onRemove">删除记录</view>
+            <view wx:if="{{item.status === '1'}}" class="exchange-item__btn" bindtap="onCancel">取消兑换</view>
+        </view> -->
+    </view>
+</view>

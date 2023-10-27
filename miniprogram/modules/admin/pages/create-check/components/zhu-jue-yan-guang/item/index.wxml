@@ -1,0 +1,16 @@
+<view class="eye-form-input">
+    <number-input model:value="{{sph}}" fixed="2" placeholder="Sph" />
+    <number-input model:value="{{cyl}}" fixed="2" placeholder="Cyl" />
+    <view class="divider">X</view>
+    <number-input model:value="{{axis}}" fixed="2" placeholder="Axis" />
+</view>
+<view class="eye-form-input">
+    <number-input model:value="{{far}}" fixed="2" placeholder="远" />
+    <number-input model:value="{{near}}" fixed="2" placeholder="近" />
+    <view wx:if="{{showRemove}}" class="eye-form-control" bind:tap="onRemove">
+        <icon type="minus-circle" size="40" />
+    </view>
+    <view wx:if="{{showAdd}}" class="eye-form-control" bind:tap="onAdd">
+        <icon type="add-circle" size="40" />
+    </view>
+</view>

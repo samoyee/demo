@@ -1,0 +1,144 @@
+.page {
+  background-color: #fafafa;
+  height: calc(100vh - 140rpx - env(safe-area-inset-bottom));
+  padding-bottom: 20rpx;
+}
+.eye-form-tabs {
+  position: sticky;
+  top: 0;
+  display: flex;
+  padding-left: 200rpx;
+  z-index: 99;
+  background-color: #fff;
+  height: 80rpx;
+  border-bottom: 1px solid #e5eced;
+  margin-bottom: 24rpx;
+
+  .eye-form-tab {
+    flex: 1;
+    text-align: center;
+    line-height: 80rpx;
+    position: relative;
+
+    &.active {
+      color: #5aa5e2;
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        height: 4rpx;
+        width: 20%;
+        background-color: #5aa5e2;
+      }
+    }
+  }
+}
+
+.eye-form {
+  width: 100vw;
+
+  .eye-form-item {
+    display: flex;
+    margin-bottom: 12rpx;
+
+    .eye-form-label {
+      width: 140rpx;
+      height: 65rpx;
+      line-height: 65rpx;
+      flex-shrink: 0;
+      padding-left: 24rpx;
+    }
+
+    .eye-form-content-scroll {
+      width: calc(100vw - 140rpx);
+      overflow: hidden;
+
+      .eye-form-content {
+        display: flex;
+        transition: transform 0.2s linear;
+
+        &.left {
+          transform: translateX(-100%);
+        }
+
+        .eye-form-content-item {
+          flex-shrink: 0;
+          width: 100%;
+          padding: 0 16rpx 0 16rpx;
+          box-sizing: border-box;
+        }
+      }
+    }
+  }
+
+  .eye-form-input {
+    display: flex;
+
+    & + .eye-form-input {
+      margin-top: 10rpx;
+    }
+
+    .eye-form-input-inner {
+      position: relative;
+
+      .nurse {
+        position: absolute;
+        top: 4rpx;
+        right: 8rpx;
+        font-size: 18rpx;
+        color: #5aa5e2;
+      }
+
+      & + .eye-form-input-inner {
+        margin-left: 12rpx;
+      }
+    }
+
+    .number-input {
+      flex: 1;
+      max-width: 160rpx;
+      border: 1px solid #c5cecd;
+      border-radius: 2rpx;
+
+      & + .number-input {
+        margin-left: 12rpx;
+      }
+    }
+
+    .divider,
+    .unit {
+      height: 65rpx;
+      line-height: 65rpx;
+      margin: 0 12rpx;
+      color: #a5acad;
+    }
+
+    .eye-form-textarea {
+      border: 1px solid #c5cecd;
+      padding: 12rpx;
+    }
+
+    .eye-form-image-choose {
+      height: 500rpx;
+      width: 500rpx;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 80rpx;
+      border: 1px dashed #c5cecd;
+      color: #c5cecd;
+      border-radius: 6rpx;
+      background-color: #fafafa;
+    }
+  }
+}
+
+.btn {
+  margin: 0 24rpx;
+  text-align: center;
+  line-height: 80rpx;
+  border-radius: 16rpx;
+  background-color: #5aa5e2;
+  color: #fff;
+}

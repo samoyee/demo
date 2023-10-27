@@ -1,0 +1,7 @@
+{
+    "navigationBarTitleText": "收费标准",
+    "usingComponents": {
+        "tabs": "./components/tabs/index",
+        "sub-tabs": "./components/sub-tabs/index"
+    }
+}

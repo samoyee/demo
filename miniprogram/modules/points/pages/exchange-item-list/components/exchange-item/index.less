@@ -1,0 +1,88 @@
+.exchange-item {
+    margin-top: 22rpx;
+    background-color: #fff;
+    padding: 0 24rpx;
+    position: relative;
+
+    .exchange-item__header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        font-size: 22rpx;
+        color: #999;
+        height: 64rpx;
+    }
+
+    .exchange-item__body {
+        display: flex;
+        position: relative;
+    }
+
+    .exchange-item__cover {
+        flex-shrink: 0;
+        width: 140rpx;
+        height: 140rpx;
+    }
+
+    .exchange-item__status {
+        &.wait {
+            color: #1989ff;
+        }
+    }
+
+    .exchange-item__content {
+        flex: 1;
+        margin-left: 12rpx;
+
+        .exchange-item__title {
+            font-size: 32rpx;
+            margin-bottom: 8rpx;
+        }
+
+        .exchange-item__info {
+            font-size: 26rpx;
+            color: #999;
+        }
+    }
+
+    .exchange-item__right {
+        flex-shrink: 0;
+        display: flex;
+        align-items: center;
+
+        .exchange-item__score {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12rpx;
+        }
+
+    }
+
+    .exchange-item__footer {
+        padding: 16rpx 0;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+
+        .exchange-item__count {
+            color: #999;
+            font-size: 24rpx;
+        }
+
+        .exchange-item__buttons {
+            display: block;
+            text-align: right;
+        }
+
+        .exchange-item__btn {
+            vertical-align: top;
+            display: inline-block;
+            padding: 10rpx 16rpx;
+            border: 1rpx solid #ccc;
+
+            &+.exchange-item__btn {
+                margin-left: 20rpx;
+            }
+        }
+    }
+}

@@ -1,0 +1,68 @@
+<wxs module="constant">
+    module.exports.OCCUPATION_OPTIONS = ["医生", "公务员", "军人", "学生", "企业员工", "其他"]
+    module.exports.GENDER_OPTIONS = ['男', '女']
+</wxs>
+<default-page
+    wx:if="{{showError}}"
+    type="{{errorType}}"
+    errorMsg="{{errorMsg}}"
+    show-refresh
+    bind:refresh="refresh"
+/>
+<block wx:else>
+    <zz-form id="patient-form">
+        <zz-form-item name="avatar" label="头像">
+            <zz-form-avatar />
+        </zz-form-item>
+        <zz-form-item
+            name="name"
+            label="姓名"
+            rules="{{[ { required: true, message: '必填项' } ]}}"
+            required
+        >
+            <zz-form-input placeholder="请输入姓名" />
+        </zz-form-item>
+        <zz-form-item
+            name="gender"
+            label="性别"
+        >
+            <zz-form-select
+                placeholder="请选择性别"
+                options="{{constant.GENDER_OPTIONS}}"
+            />
+        </zz-form-item>
+        <zz-form-item
+            name="birthday"
+            label="出生日期"
+        >
+            <zz-form-date placeholder="请选择出生日期" />
+        </zz-form-item>
+        <zz-form-item
+            name="idCard"
+            label="身份证号码"
+        >
+            <zz-form-input placeholder="请录入身份证号码" />
+        </zz-form-item>
+        <zz-form-item
+            name="occupation"
+            label="职业"
+        >
+            <zz-form-input placeholder="请录入职业" />
+        </zz-form-item>
+        <zz-form-item
+            name="address"
+            label="居住地"
+        >
+            <zz-form-address placeholder="请选择居住地" />
+        </zz-form-item>
+    </zz-form>
+    <fixed-footer>
+        <view
+            bindtap="onSubmit"
+            role="button"
+            class="save-btn"
+        >
+            保 存
+        </view>
+    </fixed-footer>
+</block>

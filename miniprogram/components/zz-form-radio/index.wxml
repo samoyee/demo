@@ -1,0 +1,11 @@
+
+<radio-group bindchange="onInput" class="zz-form-radio-group">
+    <label wx:for="{{options}}" wx:key="index" class="zz-form-radio">
+        <radio
+            value="{{item.value}}"
+            checked="{{item.value === value}}"
+            color="#5aa5e2"
+        />
+        {{item.label}}
+    </label>
+</radio-group>

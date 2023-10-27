@@ -1,0 +1,21 @@
+<search-bar placeholder="请输入就诊人姓名或手机号查询" />
+
+<view class="search-list">
+    <view class="search-item" bind:tap="goToDetail">
+        <view>许骜</view>
+        <view class="phone" catch:tap="onPhoneCall">186-6719-8030</view>
+        <icon type="arrow-right" color="#ccc" size="24" />
+    </view>
+    <view class="search-item" bind:tap="goToDetail">
+        <view>许骜</view>
+        <icon type="arrow-right" color="#ccc" size="24" />
+    </view>
+    <view class="search-item" bind:tap="goToDetail">
+        <view>许骜</view>
+        <icon type="arrow-right" color="#ccc" size="24" />
+    </view>
+    <view class="search-item" bind:tap="goToDetail">
+        <view>许骜</view>
+        <icon type="arrow-right" color="#ccc" size="24" />
+    </view>
+</view>

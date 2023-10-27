@@ -1,0 +1,12 @@
+<navigator class="exam-item" url="/modules/inspection/pages/reportDetail/index?type={{item.type}}&examId={{item.examId}}">
+    <view class="exam-item-eye">
+        {{item.eye}}
+    </view>
+    <view class="exam-item-content">
+        <view>{{item.name}}</view>
+        <view class="exam-item-info">
+            <view>{{item.examDate}}</view>
+            <!-- <view>护士：小陈</view> -->
+        </view>
+    </view>
+</navigator>

@@ -1,0 +1,55 @@
+<default-page
+    wx:if="{{showError}}"
+    type="{{errorType}}"
+    errorMsg="{{errorMsg}}"
+/>
+<block wx:else>
+    <view class="exam-detail-header">
+        <view class="exam-detail-label">主视眼</view>
+        <view class="exam-detail-col">
+            <view class="eye-label">左眼</view>
+            <image
+                wx:if="{{data.dominant === '左'}}"
+                src="/assets/eye.png"
+                class="eye-icon"
+            />
+        </view>
+        <view class="exam-detail-col">
+            <view class="eye-label">右眼</view>
+            <image
+                wx:if="{{data.dominant === '右'}}"
+                src="/assets/eye.png"
+                class="eye-icon"
+            />
+        </view>
+    </view>
+    <view
+        wx:for="{{data.items}}"
+        wx:key="index"
+        class="exam-detail-item"
+    >
+        <view class="exam-detail-label">{{item.label}}</view>
+        <view class="exam-detail-col">
+            <view
+                wx:for="{{item.left}}"
+                wx:key="leftindex"
+                wx:for-item="subItem"
+                class="exam-detail-col-row"
+            >
+                <view class="exam-detail-col-row-label">{{subItem.label}}</view>
+                <view class="exam-detail-col-row-value">{{subItem.value}}</view>
+            </view>
+        </view>
+        <view class="exam-detail-col">
+            <view
+                wx:for="{{item.right}}"
+                wx:key="rightindex"
+                wx:for-item="subItem"
+                class="exam-detail-col-row"
+            >
+                <view class="exam-detail-col-row-label">{{subItem.label}}</view>
+                <view class="exam-detail-col-row-value">{{subItem.value}}</view>
+            </view>
+        </view>
+    </view>
+</block>

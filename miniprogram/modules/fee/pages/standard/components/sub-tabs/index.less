@@ -1,0 +1,23 @@
+.sub-tabs {
+    display: flex;
+    overflow: auto hidden;
+    margin: 12rpx;
+    flex-shrink: 0;
+
+    .sub-tab-item {
+        display: block;
+        padding: 6rpx 20rpx;
+        margin: 0 6rpx;
+        flex-shrink: 0;
+        color: #333;
+        font-weight: 500;
+        position: relative;
+        font-size: 24rpx;
+
+        &.active {
+            color: #fff;
+            background-color: #1890ff;
+            border-radius: 24rpx;
+        }
+    }
+}

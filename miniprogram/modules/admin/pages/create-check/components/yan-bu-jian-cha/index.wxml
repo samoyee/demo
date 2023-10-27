@@ -1,0 +1,30 @@
+<view class="eye-form-label">眼部检查</view>
+<view class="eye-form-content-scroll">
+    <view class="{{['eye-form-content', position]}}">
+        <view class="eye-form-content-item">
+            <view class="eye-form-input">
+                <textarea
+                    model:value="{{right}}"
+                    class="eye-form-textarea"
+                />
+            </view>
+            <view class="eye-form-input">
+                <view
+                    bind:tap="chooseImages"
+                    data-position="right"
+                    class="eye-form-image-choose"
+                >
+                    <icon type="plus" />
+                </view>
+            </view>
+        </view>
+        <view class="eye-form-content-item">
+            <view class="eye-form-input">
+                <textarea
+                    model:value="{{left}}"
+                    class="eye-form-textarea"
+                />
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,73 @@
+<wxs
+    src="../../utils.wxs"
+    module="utils"
+></wxs>
+<view class="exchange-list__fixed">
+    <search-bar
+        value="{{searchKey}}"
+        bind:search="onSearch"
+        placeholder="请输入关键字查询"
+    />
+    <wux-tabs
+        class="exchange-list__tabs"
+        defaultCurrent="all"
+        bind:change="onTabChange"
+    >
+        <wux-tab
+            key=""
+            title="全部"
+        ></wux-tab>
+        <wux-tab
+            key="1"
+            title="待核销"
+        ></wux-tab>
+        <wux-tab
+            key="2"
+            title="已完成"
+        ></wux-tab>
+        <wux-tab
+            key="3"
+            title="已过期"
+        ></wux-tab>
+        <wux-tab
+            key="4"
+            title="已取消"
+        ></wux-tab>
+    </wux-tabs>
+</view>
+
+<refresher
+    id="exchange-list-refresher"
+    scroll-class="exchange-list__scroll"
+    bind:pulling="onPulling"
+    bind:refresh="onRefresh"
+    bind:loadmore="onLoadmore"
+    has-more="{{hasMore}}"
+>
+    <default-page
+        wx:if="{{showError}}"
+        errorType="{{errorType}}"
+        errorMsg="{{errorMsg}}"
+    />
+    <view wx:else>
+        <exchange-item
+            wx:for="{{list}}"
+            wx:key="id"
+            item="{{item}}"
+        />
+        <block wx:if="{{list.length > 0}}">
+            <view
+                wx:if="{{!hasMore}}"
+                class="exchange-list__has_more"
+            >
+                没有更多数据
+            </view>
+            <view
+                wx:else
+                class="exchange-list__has_more"
+            >
+                加载更多
+            </view>
+        </block>
+    </view>
+</refresher>

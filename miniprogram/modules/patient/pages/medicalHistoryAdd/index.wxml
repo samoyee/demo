@@ -1,0 +1,134 @@
+<wxs module="constant">
+    module.exports.YES_OR_NO_OPTIONS = [
+        { value: 1, label: "是" },
+        { value: 0, label: "否" }
+    ]
+    module.exports.DECLINE_OPTIONS = [
+        { value: 0, label: "1年内" },
+        { value: 1, label: "1-5年" },
+        { value: 5, label: "5-10年" },
+        { value: 10, label: "10年以上" }
+    ]
+    module.exports.WEAR_GLASS_OPTIONS = [
+        { value: "0", label: "不带眼镜" },
+        { value: "1", label: "框架眼镜" },
+        { value: "2", label: "软片隐形眼镜" },
+        { value: "3", label: "硬片隐形眼镜" }
+    ]
+    module.exports.WEAR_GLASS_FREQUENCY = [
+        { value: "0", label: "每天" },
+        { value: "1", label: "经常" },
+        { value: "2", label: "偶尔" },
+    ]
+    module.exports.UN_WEAR_GLASS_TIME = [
+        { value: "0", label: "1个月以上" },
+        { value: "1", label: "2周~一个月" },
+        { value: "2", label: "1周~2周" },
+        { value: "3", label: "1周以内" },
+    ]
+</wxs>
+<default-page
+    wx:if="{{showError}}"
+    type="{{errorType}}"
+    errorMsg="{{errorMsg}}"
+    show-refresh
+    bind:refresh="refresh"
+/>
+<block wx:else>
+    <zz-form id="patient-form">
+        <zz-form-item
+            name="dry"
+            label="是否得过干眼病"
+            rules="{{[ { required: true, message: '姓名必填项' } ]}}"
+        >
+            <zz-form-select
+                placeholder="请选择"
+                options="{{constant.YES_OR_NO_OPTIONS}}"
+            />
+        </zz-form-item>
+        <zz-form-item
+            name="keratitis"
+            label="是否得过角膜炎"
+        >
+            <zz-form-select
+                placeholder="请选择"
+                options="{{constant.YES_OR_NO_OPTIONS}}"
+            />
+        </zz-form-item>
+        <zz-form-item
+            name="decline"
+            label="视力减退"
+        >
+            <zz-form-select
+                placeholder="视力减退多少年"
+                options="{{constant.DECLINE_OPTIONS}}"
+            />
+        </zz-form-item>
+        <zz-form-item
+            name="wearGlass"
+            label="戴何种眼镜"
+        >
+            <zz-form-select
+                placeholder="如果带眼镜，请选择眼镜类型"
+                options="{{constant.WEAR_GLASS_OPTIONS}}"
+            />
+        </zz-form-item>
+        <zz-form-item
+            name="wearGlassFrequency"
+            label="戴镜频次"
+        >
+            <zz-form-select
+                placeholder="如果带眼镜，请选择戴镜频次"
+                options="{{constant.WEAR_GLASS_FREQUENCY}}"
+            />
+        </zz-form-item>
+        <zz-form-item
+            name="unWearGlassTime"
+            label="脱镜时间"
+        >
+            <zz-form-select
+                placeholder="如果带眼镜，请选择脱镜时间"
+                options="{{constant.UN_WEAR_GLASS_TIME}}"
+            />
+        </zz-form-item>
+        <zz-form-item
+            name="eyeHistory"
+            label="眼部手术史"
+        >
+            <zz-form-textarea placeholder="请录入眼部手术史" />
+        </zz-form-item>
+        <zz-form-item
+            name="bodyHistory"
+            label="全身疾病史"
+        >
+            <zz-form-textarea placeholder="请录入全身疾病史" />
+        </zz-form-item>
+        <zz-form-item
+            name="mentalHistory"
+            label="精神性病史"
+        >
+            <zz-form-textarea placeholder="请录入精神性病史" />
+        </zz-form-item>
+        <zz-form-item
+            name="allergyHistory"
+            label="药物过敏史"
+        >
+            <zz-form-textarea placeholder="请录入药物过敏史" />
+        </zz-form-item>
+        <zz-form-item
+            name="otherHistory"
+            label="其他"
+        >
+            <zz-form-textarea />
+        </zz-form-item>
+    </zz-form>
+    <fixed-footer>
+        <view
+            bindtap="onSubmit"
+            role="button"
+            class="save-btn"
+        >
+            保 存
+        </view>
+    </fixed-footer>
+</block>

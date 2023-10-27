@@ -1,0 +1,54 @@
+<wxs module="utils">
+    module.exports.transform = function (index, maxLen) {
+        if (index < 0) return 0
+        if (index > maxLen - 2) return - index * 60 + 10
+        return (-index - 1) * 60 + 10
+    }
+</wxs>
+<scroll-view
+    class="address-cascade-header"
+    scroll-x
+>
+    <view
+        wx:for="{{tabs}}"
+        wx:for-index="columnIndex"
+        wx:key="columnIndex"
+        data-item="{{item}}"
+        data-column-index="{{columnIndex}}"
+        class="{{['item', item.type, activeColumnIndex === columnIndex ? 'active': '']}}"
+        bindtap="onColumnChange"
+    >
+        {{item.value}}
+    </view>
+</scroll-view>
+
+<view class="address-cascade-swiper">
+    <view
+        class="address-cascade-wrapper"
+        style="transform: translate({{utils.transform(activeColumnIndex, columns.length)}}vw);"
+    >
+        <scroll-view
+            wx:for="{{columns}}"
+            wx:for-item="column"
+            wx:for-index="columnIndex"
+            wx:key="columnIndex"
+            data-column-index="{{columnIndex}}"
+            scroll-y
+            class="address-cascade-scroll"
+        >
+            <view
+                wx:for="{{column}}"
+                wx:for-item="option"
+                wx:for-index="optionIndex"
+                wx:key="optionIndex"
+                data-option="{{option}}"
+                data-column-index="{{columnIndex}}"
+                class="{{['option', values[columnIndex] === option.id ? 'active': '']}}"
+                catchtap="onOptionSelect"
+            >
+                {{option.name}}
+            </view>
+        </scroll-view>
+    </view>
+
+</view>

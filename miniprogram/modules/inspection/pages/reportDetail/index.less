@@ -1,0 +1,77 @@
+.exam-detail-header,
+.exam-detail-item {
+    display: flex;
+    align-items: center;
+
+    .exam-detail-label {
+        width: 180rpx;
+        flex-shrink: 0;
+        text-align: right;
+        margin-right: 24rpx;
+        font-weight: 600;
+    }
+
+    .exam-detail-col {
+        flex: 1;
+
+        .exam-detail-col-row {
+            display: flex;
+            align-items: center;
+
+            &+.exam-detail-col-row {
+                margin-top: 8rpx;
+            }
+
+            .exam-detail-col-row-label {
+                font-size: 24rpx;
+                color: #999;
+                margin-right: 8rpx;
+            }
+
+            .exam-detail-col-row-value {
+                font-size: 28rpx;
+            }
+        }
+    }
+}
+
+.exam-detail-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100rpx;
+    line-height: 10rpx;
+    font-size: 34rpx;
+    font-weight: 600;
+    border-bottom: 1px solid #e0e0e0;
+    background-color: #fff;
+    box-shadow: 0 4rpx 12rpx #e5e5e5;
+
+    .exam-detail-label {
+        font-size: 28rpx;
+    }
+
+    .eye-label {
+        display: inline-block;
+    }
+
+    .eye-icon {
+        display: inline-block;
+        width: 34rpx;
+        height: 22rpx;
+        margin-left: 12rpx;
+    }
+
+    &+.exam-detail-item {
+        margin-top: 110rpx;
+    }
+}
+
+.exam-detail-item {
+    padding: 22rpx 0;
+
+    &+.exam-detail-item {
+        border-top: 1px solid #f0f0f0;
+    }
+}

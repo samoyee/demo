@@ -1,0 +1,113 @@
+<wxs module="constant">
+    module.exports.getWeek = function (week) { return ["日", "一", "二", "三", "四", "五", "六"][week] }
+</wxs>
+<view class="appoint-date">
+    <view class="selected-month">{{month}}月</view>
+    <view class="date">
+        <scroll-view
+            scroll-x
+            scroll-into-view="{{scrollId}}"
+            class="date-list"
+        >
+            <block
+                wx:for="{{list}}"
+                wx:key="month"
+                wx:for-item="month"
+            >
+                <block
+                    wx:for="{{month.dates}}"
+                    wx:key="date"
+                >
+                    <view
+                        wx:if="{{!item.beforeToday}}"
+                        class="{{['date-card', value === item.date ? 'active' : '', item.disabled ? 'disabled' : '']}}"
+                        data-item="{{item}}"
+                        bind:tap="onSelect"
+                        id="date-{{item.date}}"
+                    >
+                        <view class="week">周{{constant.getWeek(item.week)}}</view>
+                        <view class="day">{{item.day}}</view>
+                    </view>
+                </block>
+            </block>
+        </scroll-view>
+        <view
+            class="more-date"
+            bind:tap="onShowMore"
+        >
+            更多日期
+        </view>
+    </view>
+</view>
+
+<popup
+    model:visible="{{showMore}}"
+    full-screen
+    show-header="{{false}}"
+    bind:confirm="onYearMonthConfirm"
+    bind:cancel="onYearMonthCancel"
+>
+    <view class="more-date-popup">
+        <view class="header">
+            <view
+                class="close"
+                bind:tap="onClose"
+            >
+                <icon
+                    type="close"
+                    size="40"
+                />
+            </view>
+            <view>您需要预约什么日期呢？</view>
+        </view>
+        <view class="month-wrapper">
+            <view class="th">日</view>
+            <view class="th">一</view>
+            <view class="th">二</view>
+            <view class="th">三</view>
+            <view class="th">四</view>
+            <view class="th">五</view>
+            <view class="th">六</view>
+        </view>
+        <scroll-view
+            scroll-y
+            scroll-into-view="{{dialogScrollId}}"
+            class="more-date-scroll"
+        >
+            <view
+                wx:for="{{list}}"
+                wx:for-item="month"
+                wx:key="month"
+                class="month-wrapper"
+            >
+                <view class="month">{{month.month}}</view>
+                <view class="month-dates">
+                    <view
+                        wx:for="{{month.dates[0].day + 1}}"
+                        class="td"
+                        wx:key="index"
+                    ></view>
+                    <view
+                        wx:for="{{month.dates}}"
+                        class="{{['td', item.today ? 'today' : '' ,value === item.date ? 'active' : '', item.disabled ? 'disabled' : '']}}"
+                        wx:key="index"
+                        data-item="{{item}}"
+                        id="dialog-date-{{item.date}}"
+                        bind:tap="onDialogSelect"
+                    >
+                        {{item.day}}
+                    </view>
+                </view>
+            </view>
+        </scroll-view>
+        <view class="date-quick-list">
+            <view
+                wx:for="{{quick}}"
+                wx:key="index"
+                class="date-quick-item"
+                data-item="{{item}}"
+                bind:tap="onQuick"
+            >{{item.label}}</view>
+        </view>
+    </view>
+</popup>

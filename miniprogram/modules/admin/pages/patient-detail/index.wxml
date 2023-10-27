@@ -1,0 +1,53 @@
+<view class="banner" />
+<navbar-container id="navbar">
+    <view class="patient-card">
+        <image class="avatar" />
+        <view class="info">
+            <view class="name">许骜</view>
+            <view class="idcard">342422**********36</view>
+            <view class="base-info">
+                <view>男</view>
+                <view>23岁</view>
+                <view>公务员</view>
+            </view>
+            <view class="address">浙江省杭州市余杭区</view>
+            <view class="phone" catch:tap="onPhoneCall">186-1234-5678</view>
+        </view>
+    </view>
+    <view slot="navbar">许骜</view>
+</navbar-container>
+
+<view class="{{['tabs', isTabsSticky ? 'sticky' : '']}}" style="top: {{top}};" id="tabs">
+    <wux-tabs defaultCurrent="1" bind:change="onTabChange">
+        <wux-tab key="1" title="常规检查"></wux-tab>
+        <wux-tab key="2" title="特殊检查"></wux-tab>
+        <wux-tab key="3" title="手术记录"></wux-tab>
+    </wux-tabs>
+</view>
+<navigator class="tab-card" open-type="navigate" url="/modules/admin/pages/create-check/index">
+    <view class="header">
+        <view class="project">常规检查</view>
+        <view class="time">2023-03-02 14:00</view>
+    </view>
+    <view class="nurse">护士A</view>
+</navigator>
+<navigator class="tab-card" open-type="navigate" url="/modules/admin/pages/create-check/index">
+    <view class="header">
+        <view class="project">少儿屈光</view>
+        <view class="time">2023-03-02 14:00</view>
+    </view>
+    <view class="nurse">护士A</view>
+</navigator>
+<navigator class="tab-card" open-type="navigate" url="/modules/admin/pages/check-detail/index">
+    <view class="header">
+        <view class="project">激光手术</view>
+        <view class="time">2023-03-02 09:00-11:00</view>
+    </view>
+    <view class="doctor">张君</view>
+    <view class="nurse">护士A</view>
+</navigator>
+
+<view class="add-btn" bind:tap="openAdd">
+    <icon type="plus" color="#fff" size="40" />
+</view>
+<view style="height: 100vh;"></view>

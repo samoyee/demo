@@ -1,0 +1,225 @@
+.page {
+  background-color: #fcfcfc;
+  height: calc(100% - env(safe-area-inset-bottom) - 90rpx);
+}
+
+.banner {
+  height: 160rpx;
+  background-color: #5aa5e2;
+  padding-top: 80rpx;
+  position: relative;
+  overflow: hidden;
+
+  .banner-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100vw;
+  }
+
+  .banner-title {
+    height: 80rpx;
+    line-height: 80rpx;
+    padding-left: 40rpx;
+    color: #fff;
+    font-size: 32rpx;
+    position: relative;
+    text-shadow: 2rpx 2rpx 0 #5aa5e2, 0 0 20rpx #5aa5e2;
+  }
+
+  .search-bar {
+    display: flex;
+    align-items: center;
+    background-color: #fff;
+    margin: 0 24rpx;
+    border-radius: 30rpx;
+    height: 60rpx;
+    padding: 0 24rpx;
+    color: #7b7b7b;
+    position: relative;
+
+    .placeholder {
+        font-size: 24rpx;
+      margin-left: 12rpx;
+    }
+  }
+}
+
+.title {
+  margin: 40rpx 24rpx 24rpx 24rpx;
+  font-size: 32rpx;
+  font-weight: 600;
+  color: #333;
+}
+
+.home-grid {
+  display: flex;
+  flex-wrap: wrap;
+  .home-grid-item {
+    min-width: 25%;
+    flex-grow: 1;
+    flex-shrink: 0;
+    text-align: center;
+    font-size: 28rpx;
+    padding: 24rpx 0;
+
+    .home-grid-icon {
+      width: 80rpx;
+      height: 80rpx;
+    }
+  }
+}
+
+.appoint-card {
+  margin: 0 24rpx;
+  background: linear-gradient(90deg, #0078e2 0%, #519ff8 100%);
+  padding: 32rpx 24rpx;
+  position: relative;
+  border-radius: 12rpx;
+
+  .appoint-icon {
+    position: absolute;
+    top: 32rpx;
+    right: 24rpx;
+    color: #fff;
+  }
+
+  .patient {
+    display: flex;
+    margin-bottom: 16rpx;
+
+    .avatar {
+      width: 120rpx;
+      height: 120rpx;
+      background-color: #fff;
+      border-radius: 12rpx;
+      margin-right: 24rpx;
+    }
+
+    .info {
+      color: #fff;
+      .name {
+        font-size: 28rpx;
+        margin-bottom: 12rpx;
+      }
+
+      .gender {
+        font-size: 22rpx;
+      }
+    }
+  }
+
+  .project-name {
+    margin-bottom: 24rpx;
+    color: #fff;
+  }
+
+  .project {
+    display: flex;
+    align-items: center;
+
+    .date,
+    .time {
+      box-sizing: border-box;
+      background-color: #5aa5e2;
+      padding: 12rpx 24rpx;
+      color: #fff;
+      border-radius: 8rpx;
+      font-size: 24rpx;
+      display: flex;
+      align-items: center;
+
+      .project-icon {
+        margin-right: 16rpx;
+      }
+    }
+
+    .time {
+      margin-left: 24rpx;
+    }
+  }
+}
+
+.doctor-scroll {
+  white-space: nowrap;
+
+  .doctor-card {
+    display: inline-block;
+    vertical-align: top;
+    background-color: #eff8ff;
+    border-radius: 24rpx;
+    padding: 24rpx;
+    box-sizing: border-box;
+    margin-left: 24rpx;
+
+    .avatar {
+      width: 360rpx;
+      height: 400rpx;
+      background-color: #fff;
+      border-radius: 24rpx;
+    }
+
+    .info {
+      display: flex;
+      align-items: flex-end;
+      margin-bottom: 12rpx;
+
+      .name {
+        font-size: 36rpx;
+        color: #333333;
+        font-weight: 600;
+      }
+
+      .role {
+        color: #777;
+        margin-left: 22rpx;
+        font-size: 24rpx;
+      }
+    }
+
+    .work-info {
+      font-size: 24rpx;
+      margin-bottom: 14rpx;
+      color: #777;
+    }
+
+    .tag-list {
+      display: flex;
+      align-items: center;
+      overflow: hidden;
+
+      .tag {
+        border-bottom: 1px solid #434747;
+        background-color: #daeefd;
+        font-size: 22rpx;
+        padding: 8rpx;
+        & + .tag {
+          margin-left: 12rpx;
+        }
+      }
+    }
+  }
+}
+
+.address {
+  position: relative;
+  margin-bottom: 24rpx;
+
+  .address-bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+  }
+
+  .address-text {
+    position: relative;
+    z-index: 2;
+    padding: 32rpx 24rpx;
+    font-size: 28rpx;
+    color: #333;
+    font-weight: bold;
+  }
+}

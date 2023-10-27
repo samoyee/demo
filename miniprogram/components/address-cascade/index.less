@@ -1,0 +1,72 @@
+.address-cascade-header {
+  display: block;
+  width: 100vw;
+  height: 100rpx;
+  border-bottom: 1px solid #f0f0f0;
+  text-align: left;
+  white-space: nowrap;
+
+  .item {
+    display: inline-block;
+    vertical-align: top;
+    margin: 0 10rpx;
+    height: 100;
+    line-height: 100rpx;
+    padding: 0 10rpx;
+    position: relative;
+
+    &.placeholder {
+      color: #aaa;
+    }
+
+    &.text {
+      color: #333;
+    }
+
+    &.active {
+      color: #1989ff;
+
+      &::after {
+        content: "";
+        position: absolute;
+        bottom: 0;
+        height: 4rpx;
+        left: 0;
+        width: 100%;
+        background-color: #1989ff;
+      }
+    }
+  }
+}
+
+.address-cascade-swiper {
+  padding-top: 10rpx;
+
+  .address-cascade-wrapper {
+    display: flex;
+    flex-wrap: nowrap;
+    height: 40vh;
+    transition: transform 0.2s linear;
+  }
+
+  .address-cascade-scroll {
+    height: 40vh;
+    flex-shrink: 0;
+    width: 60vw;
+    border-right: 1px solid #e5eced;
+    transition: transform 0.2s linear;
+  }
+
+  .option {
+    height: 60rpx;
+    line-height: 60rpx;
+    text-align: left;
+    color: #333;
+    padding: 0 32rpx;
+
+    &.active {
+      background-color: #1989ff;
+      color: #fff;
+    }
+  }
+}

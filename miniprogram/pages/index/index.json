@@ -1,0 +1,7 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "work-space": "./components/work-space/index",
+    "home": "./components/home/index"
+  }
+}

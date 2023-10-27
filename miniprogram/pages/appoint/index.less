@@ -1,0 +1,149 @@
+page {
+  background-color: #fcfcfc;
+}
+
+.appoint-data {
+  background-color: #5aa5e2;
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
+
+  .appoint-card-title {
+    margin: 25vw 60rpx 20rpx 60rpx;
+    color: #fff;
+    font-weight: 600;
+    font-size: 40rpx;
+    letter-spacing: 0.2em;
+  }
+
+  .appoint-card {
+    margin: 0 40rpx 0 40rpx;
+    background-color: #fff;
+    border-radius: 30rpx;
+    position: relative;
+    padding: 32rpx 0;
+    color: #777;
+
+    .b {
+      color: #333;
+    }
+
+    .info {
+      padding: 0 24rpx;
+      font-size: 28rpx;
+      line-height: 60rpx;
+      text-align: justify;
+      margin-bottom: 12rpx;
+
+      .h {
+        margin-bottom: 24rpx;
+      }
+
+      .p {
+        text-indent: 2em;
+      }
+    }
+
+    .desc {
+      padding: 0 24rpx;
+      color: #999;
+      margin-bottom: 12rpx;
+      text-align: justify;
+
+      .phone {
+        color: #1989ff;
+      }
+    }
+
+    .address {
+      position: relative;
+      margin-bottom: 24rpx;
+
+      .address-bg {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 1;
+      }
+
+      .address-text {
+        position: relative;
+        z-index: 2;
+        padding: 32rpx 24rpx;
+        font-size: 28rpx;
+        color: #333;
+        font-weight: bold;
+      }
+    }
+  }
+}
+
+.banner {
+  width: 100vw;
+  height: 50vw;
+  border-bottom-left-radius: 40rpx;
+  border-bottom-right-radius: 40rpx;
+  overflow: hidden;
+}
+
+.appoint-form {
+  margin-top: 24rpx;
+
+  .appoint-card {
+    margin: 0 24rpx 32rpx 24rpx;
+    padding: 32rpx;
+    border-radius: 5rpx;
+    background-color: #fff;
+    box-shadow: 0 11rpx 14rpx #e5eced;
+    border: 1px solid #e5eced;
+
+    .appoint-title {
+      font-size: 30rpx;
+      color: rgba(44, 41, 72, 0.6);
+      margin-bottom: 22rpx;
+    }
+
+    .appoint-input {
+      font-size: 32rpx;
+      padding: 12rpx 24rpx;
+      background-color: #f7f7f7;
+    }
+  }
+}
+
+.patient-list {
+  display: flex;
+  align-items: center;
+  background-color: #fff;
+  margin-top: 22rpx;
+
+  .patient-item {
+    font-size: 22rpx;
+    color: #5aa5e2;
+    padding: 8rpx 14rpx;
+    border-radius: 8rpx;
+    border: 1px solid #e5eced;
+
+    & + .patient-item {
+      margin-left: 24rpx;
+    }
+  }
+}
+
+.appoint-confirm,
+.appoint-cancel {
+  text-align: center;
+  margin: 0 24rpx;
+  border-radius: 20rpx;
+  background-color: #333;
+  color: #fff;
+  font-weight: 500;
+  height: 100rpx;
+  line-height: 100rpx;
+}
+
+.appoint-confirm {
+  background-color: #5aa5e2;
+}

@@ -1,0 +1,61 @@
+page {
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+    width: 100vw;
+    background-color: #f0f0f0;
+}
+
+.fee-standard-tabs {
+    flex-shrink: 0;
+    background-color: #fff;
+}
+
+.fee-standard-scroll {
+    flex: 1;
+    height: 0;
+    padding-bottom: 60rpx;
+}
+
+.fee-standard-item {
+    display: block;
+    margin: 24rpx 24rpx 0 24rpx;
+    background-color: #fff;
+    border-radius: 16rpx;
+    padding: 24rpx;
+
+    .fee-standard-item-title {
+        display: block;
+        font-weight: 500;
+        font-size: 36rpx;
+        color: #333;
+        margin-bottom: 16rpx;
+    }
+
+    .fee-standard-item-price-info {
+        color: #999;
+        font-size: 24rpx;
+        text-align: right;
+
+        .fee-standard-item-price {
+            display: inline;
+            color: #ff5e00;
+            font-size: 40rpx;
+        }
+    }
+
+    .fee-standard-item-price-list {
+        display: block;
+
+        .fee-standard-item-price-item {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 8rpx;
+
+            .fee-standard-item-price {
+                color: #ff5e00;
+            }
+        }
+    }
+}

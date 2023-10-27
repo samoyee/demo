@@ -1,0 +1,6 @@
+{
+    "navigationBarTitleText": "就诊人搜索",
+    "usingComponents": {
+        "search-bar": "/components/search-bar/index"
+    }
+}

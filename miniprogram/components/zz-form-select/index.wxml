@@ -1,0 +1,32 @@
+<input
+    placeholder-class="zz-form-input-placeholder"
+    class="input-class"
+    value="{{label}}"
+    disabled
+    placeholder="{{placeholder}}"
+    bindtap="onOpen"
+/>
+
+<popup
+    model:visible="{{open}}"
+    show-header="{{false}}"
+>
+    <scroll-view
+        scroll-y
+        class="select-scroll"
+    >
+        <view
+            wx:for="{{options}}"
+            wx:for-item="option"
+            wx:key="index"
+            data-value="{{option.value !== undefined ? option.value : option}}"
+            data-label="{{option.label || option}}"
+            data-disabled="{{option.disabled || false}}"
+            class="{{['select-item', disabled ? 'disabled': '']}}"
+            hover-class="hover"
+            bindtap="onSelect"
+        >
+            {{option.label || option}}
+        </view>
+    </scroll-view>
+</popup>

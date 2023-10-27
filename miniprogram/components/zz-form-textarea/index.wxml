@@ -1,0 +1,9 @@
+<textarea
+    placeholder-class="zz-form-input-placeholder"
+    class="input-class"
+    model:value="{{value}}"
+    placeholder="{{placeholder}}"
+    bindinput="onChange"
+    auto-height
+    confirm-type="return"
+/>

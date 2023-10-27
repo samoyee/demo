@@ -1,0 +1,36 @@
+<default-page
+    wx:if="{{showError}}"
+    type="{{errorType}}"
+    errorMsg="{{errorMsg}}"
+/>
+<block wx:else>
+    <navbar-container id="navbar">
+        <view class="shop-item-detail__info">
+            <view>{{data.name}}</view>
+        </view>
+        <view slot="navbar">{{data.name}}</view>
+    </navbar-container>
+    <swiper
+        indicator-dots
+        class="shop-item-detail__header_swiper"
+    >
+        <swiper-item class="shop-item-detail__header_swiper_item">
+            <image
+                src="{{data.path}}"
+                class="shop-item-detail__image"
+                mode="aspectFill"
+            />
+        </swiper-item>
+    </swiper>
+    <view class="shop-item-detail__bottom_bar">
+        <view class="shop-item-detail__left">
+            <view class="shop-item-detail__count">剩余：{{99}}</view>
+        </view>
+        <view
+            class="shop-item-detail__btn"
+            bindtap="onExchange"
+        >
+            立即兑换
+        </view>
+    </view>
+</block>

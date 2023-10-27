@@ -1,0 +1,6 @@
+<view class="zz-form-avatar input-class">
+    <view class="avatar" bind:tap="onChooseImage">
+        <image wx:if="{{value}}" src="{{value}}" class="avatar-image" />
+        <icon wx:else type="plus" icon-class="avatar-icon" />
+    </view>
+</view>

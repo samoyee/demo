@@ -1,0 +1,26 @@
+.number-input {
+  position: relative;
+  display: inline-block;
+
+  &.disabled {
+    background-color: #f0f0f0;
+  }
+
+  .input,
+  .input-placeholder {
+    position: relative;
+    padding: 0 12rpx;
+    height: 60rpx;
+    line-height: 60rpx;
+    color: #333;
+    font-size: 26rpx;
+  }
+
+  .input-placeholder {
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: #c5cecd;
+    pointer-events: none;
+  }
+}

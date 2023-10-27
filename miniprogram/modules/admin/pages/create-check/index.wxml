@@ -1,0 +1,87 @@
+<wxs module="constant">
+    module.exports.MAIN_EYE_OPTION = [
+        { value: '右', label: '右眼' },
+        { value: '左', label: '左眼' },
+    ]
+</wxs>
+<scroll-view
+    scroll-y
+    class="page"
+>
+    <zz-form id="zz-form">
+        <zz-form-item
+            label="检查时间"
+            name="checkDate"
+        >
+            <zz-form-date />
+        </zz-form-item>
+        <zz-form-item
+            label="主视眼"
+            name="mainEye"
+        >
+            <zz-form-radio options="{{constant.MAIN_EYE_OPTION}}" />
+        </zz-form-item>
+    </zz-form>
+
+    <view class="eye-form-tabs">
+        <view
+            class="{{['eye-form-tab', position === 'right' ? 'active' : '']}}"
+            data-position="right"
+            bind:tap="setPosition"
+        >
+            右眼
+        </view>
+        <view
+            class="{{['eye-form-tab', position === 'left' ? 'active' : '']}}"
+            data-position="left"
+            bind:tap="setPosition"
+        >
+            左眼
+        </view>
+    </view>
+
+    <eye-form
+        id="eye-form"
+        class="{{['eye-form', active ? 'active' : '']}}"
+    >
+        <eye-form-item
+            wx:for="{{templates}}"
+            wx:key="index"
+            name="{{item.name}}"
+        >
+            <luo-yan-shi-li
+                position="{{position}}"
+                wx:if="{{item.name === 'luoYanShiLi'}}"
+            />
+            <dian-nao-yan-guang
+                position="{{position}}"
+                wx:elif="{{item.name === 'dianNaoYanGuang'}}"
+            />
+            <tong-kong-zhi-jing
+                position="{{position}}"
+                wx:elif="{{item.name === 'tongKongZhiJing'}}"
+            />
+            <yan-ya
+                position="{{position}}"
+                wx:elif="{{item.name === 'yanYa'}}"
+            />
+            <yan-zhou-chang-du
+                position="{{position}}"
+                wx:elif="{{item.name === 'yanZhouChangDu'}}"
+            />
+            <zhu-jue-yan-guang
+                position="{{position}}"
+                wx:elif="{{item.name === 'zhuJueYanGuang'}}"
+            />
+            <yan-bu-jian-cha
+                position="{{position}}"
+                wx:elif="{{item.name === 'yanBuJianCha'}}"
+            />
+        </eye-form-item>
+    </eye-form>
+
+</scroll-view>
+
+<fixed-footer>
+    <view bind:tap="onSubmit" class="btn">添加</view>
+</fixed-footer>

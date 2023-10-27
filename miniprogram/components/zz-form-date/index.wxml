@@ -1,0 +1,20 @@
+<input
+    placeholder-class="zz-form-input-placeholder"
+    class="input-class"
+    value="{{value}}"
+    disabled
+    placeholder="{{placeholder}}"
+    bindtap="onOpen"
+/>
+
+<popup
+    model:visible="{{open}}"
+    show-header="{{false}}"
+>
+    <calendar
+        id="calendar"
+        value="{{value}}"
+        bind:select="onSelect"
+    />
+    <view class="safe-area" />
+</popup>

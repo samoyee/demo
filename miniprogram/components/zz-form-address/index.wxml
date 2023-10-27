@@ -1,0 +1,21 @@
+<input
+    placeholder-class="zz-form-input-placeholder"
+    class="input-class"
+    value="{{label}}"
+    disabled
+    placeholder="{{placeholder}}"
+    bindtap="onOpen"
+/>
+
+<popup
+    model:visible="{{open}}"
+    show-header="{{false}}"
+    bind:after-close="afterClose"
+>
+    <address-cascade
+        value="{{value}}"
+        model:label="{{label}}"
+        id="address-cascade"
+        bind:select="onSelect"
+    />
+</popup>

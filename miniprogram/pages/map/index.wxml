@@ -1,0 +1,59 @@
+<wxs module="constant">
+    module.exports.markers = [
+        {
+            id: 1,
+            latitude: '30.264599',
+            longitude: '120.167128',
+            iconPath: 'https://mskmanager.oss-cn-hangzhou.aliyuncs.com/mini_program/location.png',
+            width: 20,
+            height: 20,
+            customCallout: {
+                display: 'ALWAYS',
+                anchorY: -5,
+            }
+        }
+    ]
+</wxs>
+<navbar-container />
+<map
+    class="map"
+    longitude="120.167128"
+    latitude="30.264599"
+    min-scale="12"
+    markers="{{constant.markers}}"
+    scale="16"
+    customCallout="{{constant.customCallout}}"
+>
+    <cover-view slot="callout">
+        <cover-view
+            marker-id="1"
+            class="callout"
+        >明视康眼科医院</cover-view>
+    </cover-view>
+</map>
+<view class="{{['map-info', active ? 'active' : '']}}">
+    <view
+        class="expand"
+        bind:tap="onToggleActive"
+    >
+        <image
+            class="expand-icon"
+            src="https://mskmanager.oss-cn-hangzhou.aliyuncs.com/mini_program/expand.png"
+        />
+    </view>
+    <scroll-view
+        scroll-y="{{active}}"
+        class="info-scroll"
+        scroll-top="{{scrollTop}}"
+    >
+        <view class="title">公交路线</view>
+        <view class="p">1. 乘坐13路、14路、199路、201路、219路、21路、301路、5路、78路、991路到<text class="b">延安路口站</text>下车，向<text class="b">东</text>步行<text class="b">90</text>米</view>
+        <view class="p">2. 乘坐38路、517路、72路到<text class="b">中大广场站</text>下车，向<text class="b">南行十字路口右转</text>步行<text class="b">160</text>米</view>
+        <view class="p">3. 乘坐14路、207路、38路、517路、814路到<text class="b">贯桥站</text>下车，向<text class="b">北行十字路口左转</text>步行<text class="b">180</text>米</view>
+        <view class="p">4. 乘坐13路、199路、201路、21路、275路、30路、5路、991路到<text class="b">中北路口站</text>下车，向<text class="b">西</text>步行<text class="b">190</text>米</view>
+        <view class="p">5. 乘坐201路、21路、30路、32路、35路、5路、991路到<text class="b">环北市场站</text>下车，向<text class="b">西</text>步行<text class="b">200</text>米</view>
+        <view class="title">地铁</view>
+        <view class="p">乘坐<text class="b">地铁1号线</text>或<text class="b">地铁2号线</text>到<text class="b">凤起路站</text>，<text class="b">D4出入口</text>或<text class="b">A出入口</text>出站，沿凤起路东行200米</view>
+        <view class="safe-area"></view>
+    </scroll-view>
+</view>

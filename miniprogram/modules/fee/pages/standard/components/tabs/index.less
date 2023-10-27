@@ -1,0 +1,31 @@
+.tabs {
+    display: flex;
+    overflow: auto hidden;
+    font-size: 26rpx;
+    flex-shrink: 0;
+
+    .tab-item {
+        display: block;
+        padding: 24rpx 24rpx;
+        flex-shrink: 0;
+        color: #999;
+        font-weight: 500;
+        position: relative;
+
+        &.active {
+            color: #333;
+
+            &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                bottom: 12rpx;
+                height: 6rpx;
+                left: 40rpx;
+                right: 40rpx;
+                border-radius: 3rpx;
+                background-color: #1890ff;
+            }
+        }
+    }
+}

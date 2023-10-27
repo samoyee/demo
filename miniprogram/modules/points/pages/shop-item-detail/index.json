@@ -1,0 +1,7 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "default-page": "/components/default-page/index",
+    "navbar-container": "/components/navbar-container/index"
+  }
+}

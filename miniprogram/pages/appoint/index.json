@@ -1,0 +1,12 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "default-page": "/components/default-page/index",
+    "zz-form-select": "/components/zz-form-select/index",
+    "zz-form-input": "/components/zz-form-input/index",
+    "fixed-footer": "/components/fixed-footer/index",
+    "navbar-container": "/components/navbar-container/index",
+    "appoint-date": "./components/appoint-date/index",
+    "appoint-time": "./components/appoint-time/index"
+  }
+}

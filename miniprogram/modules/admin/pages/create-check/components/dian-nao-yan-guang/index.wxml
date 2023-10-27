@@ -1,0 +1,45 @@
+<view class="eye-form-label">电脑验光</view>
+<view class="eye-form-content-scroll">
+    <view class="{{['eye-form-content', position]}}">
+        <view class="eye-form-content-item">
+            <view class="eye-form-input">
+                <number-input
+                    model:value="{{rightSph}}"
+                    fixed="2"
+                    placeholder="Sph"
+                />
+                <number-input
+                    model:value="{{rightCyl}}"
+                    fixed="2"
+                    placeholder="Cyl"
+                />
+                <view class="divider">X</view>
+                <number-input
+                    model:value="{{rightAxis}}"
+                    fixed="2"
+                    placeholder="Axis"
+                />
+            </view>
+        </view>
+        <view class="eye-form-content-item">
+            <view class="eye-form-input">
+                <number-input
+                    model:value="{{leftSph}}"
+                    fixed="2"
+                    placeholder="Sph"
+                />
+                <number-input
+                    model:value="{{leftCyl}}"
+                    fixed="2"
+                    placeholder="Cyl"
+                />
+                <view class="divider">X</view>
+                <number-input
+                    model:value="{{leftAxis}}"
+                    fixed="2"
+                    placeholder="Axis"
+                />
+            </view>
+        </view>
+    </view>
+</view>

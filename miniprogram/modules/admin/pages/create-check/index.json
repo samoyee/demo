@@ -1,0 +1,18 @@
+{
+  "usingComponents": {
+    "eye-form": "./components/eye-form/index",
+    "eye-form-item": "./components/eye-form-item/index",
+    "luo-yan-shi-li": "./components/luo-yan-shi-li/index",
+    "dian-nao-yan-guang": "./components/dian-nao-yan-guang/index",
+    "tong-kong-zhi-jing": "./components/tong-kong-zhi-jing/index",
+    "yan-ya": "./components/yan-ya/index",
+    "yan-zhou-chang-du": "./components/yan-zhou-chang-du/index",
+    "zhu-jue-yan-guang": "./components/zhu-jue-yan-guang/index",
+    "yan-bu-jian-cha": "./components/yan-bu-jian-cha/index",
+    "zz-form": "/components/zz-form/index",
+    "zz-form-item": "/components/zz-form-item/index",
+    "zz-form-date": "/components/zz-form-date/index",
+    "zz-form-radio": "/components/zz-form-radio/index",
+    "fixed-footer": "/components/fixed-footer/index"
+  }
+}

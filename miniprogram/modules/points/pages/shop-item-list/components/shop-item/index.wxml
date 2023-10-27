@@ -1,0 +1,12 @@
+<navigator url="/modules/points/pages/shop-item-detail/index?id={{item.id}}" class="shop-item">
+    <image src="{{item.path}}" class="shop-item__cover" />
+    <view class="shop-item__content">
+        <view class="shop-item__title">{{item.name}}</view>
+    </view>
+    <view class="shop-item__footer">
+        <view class="shop-item__score">
+            <icon type="diamond-fill" color="#000000" size="36rpx" />{{item.score}}
+        </view>
+        <view class="shop-item__btn" catchtap="onExchange">兑换</view>
+    </view>
+</navigator>

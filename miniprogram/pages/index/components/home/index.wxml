@@ -1,0 +1,153 @@
+<wxs module="constant">
+    module.exports.APPOINT_TIME = ["8:30-11:30", "13:00-16:00"]
+</wxs>
+<scroll-view
+    scroll-y
+    class="page"
+    bindscroll="onScroll"
+>
+    <navbar-container
+        id='navbar'
+        show-nav-back="{{false}}"
+        show-home="{{false}}"
+        top="-40"
+    >
+        <view class="banner">
+            <image
+                src="https://mskmanager.oss-cn-hangzhou.aliyuncs.com/mini_program/msk-bg.jpg"
+                class="banner-bg"
+                mode="aspectFill"
+            />
+            <view class="banner-title">杭州明视康眼科医院</view>
+            <navigator
+                class="search-bar"
+                open-type="navigate"
+                url="/modules/search/pages/home/index"
+            >
+                <icon type="search" />
+                <view class="placeholder">请输入名称查查询医生，项目等</view>
+            </navigator>
+        </view>
+        <view slot="navbar">
+            杭州明视康眼科医院
+        </view>
+    </navbar-container>
+
+    <view class="home-grid">
+        <navigator
+            class="home-grid-item"
+            open-type="navigate"
+            url="/modules/guide/pages/list/index"
+        >
+            <image
+                src="https://mskmanager.oss-cn-hangzhou.aliyuncs.com/icons/%E5%A4%84%E6%96%B9.svg"
+                class="home-grid-icon"
+            />
+            <view>就医指南</view>
+        </navigator>
+
+        <navigator
+            class="home-grid-item"
+            open-type="navigate"
+            url="/modules/fee/pages/standard/index"
+        >
+            <image
+                src="https://mskmanager.oss-cn-hangzhou.aliyuncs.com/icons/%E6%94%B6%E8%B4%B9.svg"
+                class="home-grid-icon"
+            />
+            <view>收费标准</view>
+        </navigator>
+    </view>
+
+    <view
+        wx:if="{{appointData}}"
+        class="appoint"
+    >
+        <view class="title">我的预约</view>
+        <navigator
+            class="appoint-card"
+            open-type="navigate"
+            url="/pages/appoint/index"
+        >
+            <icon
+                icon-class="appoint-icon"
+                type="more-vehicle"
+            />
+            <view class="patient">
+                <image
+                    src=""
+                    class="avatar"
+                />
+                <view class="info">
+                    <view class="name">{{appointData.name}}</view>
+                    <view class="gender">{{appointData.gender || ''}}</view>
+                </view>
+            </view>
+            <view class="project-name">{{appointData.projectName}}</view>
+            <view class="project">
+                <view class="date">
+                    <icon
+                        icon-class="project-icon"
+                        type="calendar"
+                    />{{appointData.appointDate}}
+                </view>
+                <view class="time">
+                    <icon
+                        icon-class="project-icon"
+                        type="clock"
+                    />{{constant.APPOINT_TIME[appointData.appointTime]}}
+                </view>
+            </view>
+        </navigator>
+    </view>
+
+    <view class="doctor">
+        <view class="title">行业名医</view>
+        <scroll-view
+            scroll-x
+            class="doctor-scroll"
+        >
+            <navigator
+                wx:for="{{10}}"
+                wx:key="index"
+                class="doctor-card"
+                open-type="navigate"
+                url="/modules/doctor/pages/detail/index?id={{0}}"
+            >
+                <image
+                    src=""
+                    class="avatar"
+                />
+                <view class="info">
+                    <view class="name">许骜</view>
+                    <view class="role">主任医生</view>
+                </view>
+                <view class="work-info">就医xx年</view>
+                <view class="tag-list">
+                    <view
+                        wx:for="{{3}}"
+                        wx:key="index"
+                        class="tag"
+                    >擅长XXX</view>
+                </view>
+            </navigator>
+        </scroll-view>
+    </view>
+
+    <view>
+        <view class="title">医院地址</view>
+        <navigator
+            class="address"
+            open-type="navigate"
+            url="/pages/map/index"
+        >
+            <image
+                class="address-bg"
+                src="https://mskmanager.oss-cn-hangzhou.aliyuncs.com/mini_program/address.png"
+            />
+            <view class="address-text">浙江省杭州市拱墅区凤起路384号</view>
+        </navigator>
+    </view>
+
+    <view class="safe-area"></view>
+</scroll-view>

@@ -1,0 +1,36 @@
+.zz-form-item {
+  background-color: #ffffff;
+  padding: 12px 12px 12px 16px;
+  position: relative;
+  display: flex;
+  border-bottom: 1px solid #f0f0f0;
+
+  .zz-form-item__label {
+    width: 5.5em;
+    display: block;
+    overflow: hidden;
+    margin-right: 6rpx;
+    flex-shrink: 0;
+    line-height: 40rpx;
+
+    .zz-form-item__required {
+      font-size: 20rpx;
+      color: #ff3141;
+    }
+  }
+
+  .zz-form-item__content {
+    flex: 1;
+    display: block;
+    .zz-form-item__input {
+      display: block;
+      width: 100%;
+    }
+
+    .zz-form-item__error {
+      margin-top: 4px;
+      color: #ff3141;
+      font-size: 22rpx;
+    }
+  }
+}

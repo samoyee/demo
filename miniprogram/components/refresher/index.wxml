@@ -1,0 +1,27 @@
+<scroll-view
+    class="scroll-class"
+    scrollTop="{{scrollTop}}"
+    refresher-enabled
+    scroll-y
+    show-scrollbar="{{false}}"
+    refresher-default-style="none"
+    refresher-triggered="{{triggered}}"
+    bindscroll="onScroll"
+    bindrefresherpulling="onPulling"
+    bindrefresherrefresh="onRefresh"
+    bindscrolltolower="onLoadMore"
+>
+    <view
+        slot="refresher"
+        class="refresher__pulling"
+    >
+        <icon
+            wx:if="{{!isPulling}}"
+            type="loading"
+            icon-class="refresher__pulling_loading"
+            size="40"
+            color="#999"
+        /> {{isPulling ? '松开刷新': '正在刷新'}}
+    </view>
+    <slot />
+</scroll-view>

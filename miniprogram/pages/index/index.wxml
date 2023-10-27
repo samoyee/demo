@@ -1,0 +1,2 @@
+<home wx:if="{{!doctor}}" appoint-data="{{appoint}}" />
+<work-space wx:else />

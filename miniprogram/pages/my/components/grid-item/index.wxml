@@ -1,0 +1,7 @@
+<navigator url="{{url}}" class="grid-item">
+    <view class="grid-item__top">
+        <image wx:if="{{image}}" src="{{image}}" class="grid-item__image" />
+        <slot wx:else name="image"></slot>
+    </view>
+    <view class="grid-item__title">{{title}}</view>
+</navigator>

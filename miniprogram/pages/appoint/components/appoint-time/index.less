@@ -1,0 +1,26 @@
+.appoint-time {
+  display: flex;
+  margin-top: 22rpx;
+
+  .item {
+    font-size: 28rpx;
+    padding: 16rpx 24rpx;
+    border-radius: 4rpx;
+    background-color: #f7f7f7;
+    color: #333;
+
+    & + .item {
+      margin-left: 32rpx;
+    }
+
+    &.active {
+      background-color: #5aa5e2;
+      color: #fff;
+    }
+
+    &.disabled {
+      background-color: #f4f4f4;
+      color: #999;
+    }
+  }
+}

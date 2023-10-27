@@ -1,0 +1,39 @@
+<view class="nav-bar">
+    <navigator
+        class="nav-bar-item"
+        hover-class="nav-bar-item-hover"
+        open-type="switchTab"
+        url="/pages/index/index"
+    >
+        <image
+            class="nav-bar-item-icon"
+            src="{{active === 'pages/index/index' ? 'https://mskmanager.oss-cn-hangzhou.aliyuncs.com/icons/%E9%A6%96%E9%A1%B5-%E6%BF%80%E6%B4%BB.svg' : 'https://mskmanager.oss-cn-hangzhou.aliyuncs.com/icons/%E9%A6%96%E9%A1%B5.svg'}}"
+        />
+        <view>首页</view>
+    </navigator>
+    <navigator
+        wx:if="{{!admin}}"
+        class="nav-bar-item"
+        hover-class="nav-bar-item-hover"
+        open-type="navigate"
+        url="/pages/appoint/index"
+    >
+        <image
+            class="nav-bar-item-icon"
+            src="https://mskmanager.oss-cn-hangzhou.aliyuncs.com/icons/%E9%A2%84%E7%BA%A6.svg"
+        />
+        <view>预约</view>
+    </navigator>
+    <navigator
+        class="nav-bar-item"
+        hover-class="nav-bar-item-hover"
+        open-type="switchTab"
+        url="/pages/my/index"
+    >
+        <image
+            class="nav-bar-item-icon"
+            src="{{active === 'pages/my/index' ? 'https://mskmanager.oss-cn-hangzhou.aliyuncs.com/icons/%E6%88%91%E7%9A%84-%E6%BF%80%E6%B4%BB.svg' : 'https://mskmanager.oss-cn-hangzhou.aliyuncs.com/icons/%E6%88%91%E7%9A%84.svg'}}"
+        />
+        <view>我</view>
+    </navigator>
+</view>

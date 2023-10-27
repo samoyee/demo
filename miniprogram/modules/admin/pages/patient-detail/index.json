@@ -1,0 +1,8 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "navbar-container": "/components/navbar-container/index",
+    "wux-tabs": "wux-weapp/tabs/index",
+    "wux-tab": "wux-weapp/tab/index"
+  }
+}

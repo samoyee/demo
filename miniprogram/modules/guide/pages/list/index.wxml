@@ -1,0 +1,3 @@
+<view wx:for="{{list}}" wx:key="index" class="guide-item" data-item="{{item}}" bindtap="onItemTap">
+    {{item.name}}
+</view>

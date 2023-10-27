@@ -1,0 +1,25 @@
+<view class="search-bar">
+    <icon
+        icon-class="search-bar__icon"
+        type="search"
+        size="32"
+        color="#ccc"
+    />
+    <input
+        class="search-bar__input"
+        disabled="{{disabled}}"
+        placeholder-class="search-bar__placeholder"
+        placeholder="{{placeholder}}"
+        value="{{searchKey}}"
+        bindinput="onInput"
+        bindconfirm="onSearch"
+        confirm-type="search"
+    />
+    <view
+        class="search-bar__clear"
+        wx:if="{{searchKey}}"
+        bindtap="onClear"
+    >
+        清空
+    </view>
+</view>

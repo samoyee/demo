@@ -1,0 +1,4 @@
+<view class="fixed-footer">
+    <slot />
+    <view class="safe-area" />
+</view>

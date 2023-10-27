@@ -1,0 +1,6 @@
+{
+  "navigationStyle": "custom",
+  "usingComponents": {
+    "grid-item": "./components/grid-item/index"
+  }
+}

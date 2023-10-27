@@ -1,0 +1,19 @@
+<navbar-container />
+<view class="doctor">
+    <view class="doctor-card">
+        <image class="avatar" />
+        <view class="info">
+            <view>许骜</view>
+            <view>主任医生</view>
+            <view>擅长</view>
+        </view>
+    </view>
+</view>
+
+<view>
+    <view>荣誉墙</view>
+</view>
+
+<view>
+    <view>就诊人评价</view>
+</view>

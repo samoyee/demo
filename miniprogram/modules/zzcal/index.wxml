@@ -1,0 +1,3 @@
+<van-cell-group custom-class="nav-group">
+    <van-cell is-link title="LSA" bindtap="goToDetail" data-url="/pages/zzcal/calc?method=lsa" />
+</van-cell-group>

@@ -1,0 +1,22 @@
+<view class="sign-header-logo">
+    <image src="/assets/logo.png" class="logo" />
+    <view class="name">欢迎！杭州明视康眼科医院</view>
+</view>
+<view class="sign-agreement">
+    <checkbox class="sign-checkbox" checked="{{checked}}" bindtap="onCheckChange" />
+    <view class="sign-content">
+        我已阅读并同意
+        <navigator class="policy" url="/modules/login/pages/privatePolicy/index">《杭州明视康眼科医院隐私政策》</navigator>和
+        <navigator class="policy" url="/modules/login/pages/userPolicy/index">《杭州明视康眼科医院用户协议》</navigator>
+        ，未注册的手机号将自动创建为医院账号
+    </view>
+</view>
+<view class="sign-footer">
+    <button wx:if="{{checked}}" class="signin-btn" open-type="getPhoneNumber" bindgetphonenumber="onGetPhoneNumber">
+        手机号授权登录
+    </button>
+    <button wx:if="{{!checked}}" class="signin-btn" bindtap="onTap">
+        手机号授权登录
+    </button>
+    <!-- <view class="other-btn">其他方式登录</view> -->
+</view>

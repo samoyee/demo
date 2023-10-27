@@ -1,0 +1,3 @@
+<view class="sub-tabs">
+    <view wx:for="{{data}}" wx:key="index" class="sub-tab-item {{active === index ? 'active' : ''}}" data-index="{{index}}" data-item="{{item}}" bindtap="onTap">{{item.name}}</view>
+</view>

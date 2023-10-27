@@ -1,0 +1,12 @@
+{
+  "navigationBarTitleText": "我的检查",
+  "disableScroll": true,
+  "usingComponents": {
+    "report-item": "./components/report-item/index",
+    "refresher": "/components/refresher/index",
+    "search-bar": "/components/search-bar/index",
+    "default-page": "/components/default-page/index",
+    "wux-tabs": "wux-weapp/tabs/index",
+    "wux-tab": "wux-weapp/tab/index"
+  }
+}

@@ -1,0 +1,105 @@
+<navbar-container />
+<default-page
+    wx:if="{{showError}}"
+    type="{{errorType}}"
+    errorMsg="{{errorMsg}}"
+    show-refresh
+    bind:refresh="refresh"
+/>
+<block wx:elif="{{loading}}">
+</block>
+<block wx:elif="{{appointData}}">
+    <view class="appoint-data">
+        <view class="appoint-card-title">预约成功</view>
+        <view class="appoint-card">
+            <view class="info">
+                <view class="h">尊敬的<text class="b">{{appointData.name}}</text>，</view>
+                <view class="p">
+                    您已成功预约了<text class="b">{{appointData.projectName}}</text>项目，请于<text class="b">{{appointData.appointDate}}</text>
+                    <text class="b">{{times[appointData.appointTime].label}}</text>到院，并出示您预约成功的短信或此页。
+                </view>
+            </view>
+            <view class="desc">就诊时请携带身份证，佩戴口罩。</view>
+            <view class="desc">
+                如有疑问请致电<text
+                    class="phone"
+                    bind:tap="onPhoneCall"
+                >0571-85318888</text>咨询
+            </view>
+            <navigator
+                class="address"
+                open-type="navigate"
+                url="/pages/map/index"
+            >
+                <image
+                    class="address-bg"
+                    src="https://mskmanager.oss-cn-hangzhou.aliyuncs.com/mini_program/address.png"
+                />
+                <view class="address-text">浙江省杭州市拱墅区凤起路384号</view>
+            </navigator>
+           
+            <view
+                class="appoint-cancel"
+                bind:tap="onCancel"
+            >
+                取消预约
+            </view>
+        </view>
+    </view>
+</block>
+<block wx:else>
+    <image
+        mode="aspectFill"
+        src="https://mskmanager.oss-cn-hangzhou.aliyuncs.com/mini_program/appoint-banner.jpg"
+        class="banner"
+    />
+    <view class="appoint-form">
+        <view class="appoint-card">
+            <view class="appoint-title">您需要预约什么项目呢？</view>
+            <zz-form-select
+                input-class="appoint-input"
+                model:value="{{projectId}}"
+                placeholder="请选择"
+                options="{{projects}}"
+                bind:change="onProjectChange"
+            />
+        </view>
+        <view class="appoint-card">
+            <view class="appoint-title">您需要预约什么日期呢？</view>
+            <appoint-date
+                model:value="{{appointDate}}"
+                id="appoint-date"
+            />
+        </view>
+        <view class="appoint-card">
+            <view class="appoint-title">您需要预约什么时间呢？</view>
+            <appoint-time
+                model:value="{{appointTime}}"
+                options="{{times}}"
+            />
+        </view>
+        <view class="appoint-card">
+            <zz-form-input
+                model:value="{{name}}"
+                input-class="appoint-input"
+                placeholder="请输入就诊人姓名"
+                bind:change="onNameChange"
+            />
+            <view class="patient-list">
+                <view
+                    wx:for="{{patients}}"
+                    wx:key="index"
+                    class="patient-item"
+                    data-item="{{item}}"
+                    bind:tap="onPatientSelect"
+                >{{item.label}}</view>
+            </view>
+        </view>
+    </view>
+    <view
+        class="appoint-confirm"
+        bind:tap="onSubmit"
+    >
+        确认预约
+    </view>
+</block>

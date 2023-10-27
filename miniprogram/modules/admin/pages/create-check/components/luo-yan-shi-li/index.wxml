@@ -1,0 +1,46 @@
+<view class="eye-form-label">裸眼视力</view>
+<view class="eye-form-content-scroll">
+    <view class="{{['eye-form-content', position]}}">
+        <view class="eye-form-content-item">
+            <view class="eye-form-input">
+                <view class="eye-form-input-inner">
+                    <number-input
+                        model:value="{{rightFar}}"
+                        fixed="2"
+                        placeholder="远"
+                        disabled
+                    />
+                    <view class="nurse">护士A</view>
+                </view>
+                <view class="eye-form-input-inner">
+                    <number-input
+                        model:value="{{rightNear}}"
+                        fixed="2"
+                        placeholder="近"
+                        disabled
+                    />
+                    <view class="nurse">护士A</view>
+                </view>
+
+            </view>
+        </view>
+        <view class="eye-form-content-item">
+            <view class="eye-form-input">
+                <view class="eye-form-input-inner">
+                    <number-input
+                        model:value="{{leftFar}}"
+                        fixed="2"
+                        placeholder="远"
+                    />
+                </view>
+                <view class="eye-form-input-inner">
+                    <number-input
+                        model:value="{{leftNear}}"
+                        fixed="2"
+                        placeholder="近"
+                    />
+                </view>
+            </view>
+        </view>
+    </view>
+</view>

@@ -1,0 +1,69 @@
+.calendar-yearMonth-header {
+  display: flex;
+  height: 100rpx;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.calendar-yearMonth-prev,
+.calendar-yearMonth-next {
+  width: 100rpx;
+  height: 100rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.calendar-container {
+  display: block;
+}
+
+.calendar-header,
+.calendar-body {
+  display: block;
+  width: 98vw;
+  margin: 0 auto;
+  text-align: left;
+}
+
+.calendar-header {
+  background-color: #f0f0f0;
+  .calendar-item {
+    color: #555;
+    font-weight: bold;
+    height: 80rpx;
+    line-height: 80rpx;
+    text-align: center;
+  }
+}
+
+.calendar-item {
+  display: inline-block;
+  width: 14vw;
+  height: 14vw;
+  line-height: 14vw;
+  vertical-align: top;
+  position: relative;
+  text-align: center;
+  color: #999;
+
+  &.active {
+    background-color: #1989ff;
+    color: #fff;
+  }
+
+  &.disabled {
+    color: #ccc;
+    background-color: #fafafa;
+  }
+}
+
+.calendar-month-picker {
+  height: 45vh;
+}
+.calendar-month-picker-item {
+  line-height: 80rpx;
+}
+.calendar-month-picker-indicator {
+  height: 80rpx;
+}

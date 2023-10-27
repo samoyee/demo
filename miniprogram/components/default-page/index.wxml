@@ -1,0 +1,24 @@
+<wxs module="utils">
+    module.exports.getTitle = function (errorType) {
+        if (errorType === 'EMPTY_DATA') return '暂无数据'
+        return '系统错误'
+    }
+    module.exports.getIcon = function (errorType) {
+        return 'https://mskmanager.oss-cn-hangzhou.aliyuncs.com/icons/' + (errorType || 'SYSTEM_ERROR') + '.png'
+    }
+</wxs>
+
+<view class="default-page{{fullPage ? ' full-page' : ''}}">
+    <image
+        class="default-page__icon"
+        src="{{utils.getIcon(errorType)}}"
+        mode="widthFix"
+    />
+    <view class="default-page__title">{{utils.getTitle(errorType)}}</view>
+    <view class="default-page__content">{{errorMsg || '服务出错了，请稍后再试'}}</view>
+    <view
+        wx:if="{{showRefresh}}"
+        class="default-page__refresh"
+        bind:tap="refresh"
+    >刷 新</view>
+</view>

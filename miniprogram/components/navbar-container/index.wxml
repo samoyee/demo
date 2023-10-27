@@ -1,0 +1,43 @@
+<view
+    class="navbar"
+    id="navbar"
+>
+    <slot></slot>
+</view>
+
+<root-portal>
+    <view
+        class="navbar-container"
+        style="padding-top: {{statusBarHeight}}px; background-color: rgba(255, 255, 255, {{opacity}});"
+    >
+        <view class="inner">
+            <navigator
+                wx:if="{{showNavBack && navBack}}"
+                class="back"
+                open-type="navigateBack"
+            >
+                <icon
+                    type="arrow-left"
+                    icon-class="icon"
+                />
+            </navigator>
+            <navigator
+                wx:elif="{{showHome && home}}"
+                class="home"
+                open-type="switchTab"
+                path="/pages/index/index"
+            >
+                <icon
+                    type="home"
+                    icon-class="icon"
+                />
+            </navigator>
+            <view
+                class="slot"
+                style="opacity: {{opacity}};"
+            >
+                <slot name="navbar"></slot>
+            </view>
+        </view>
+    </view>
+</root-portal>

@@ -1,0 +1,23 @@
+<view class="eye-form-label">眼压</view>
+<view class="eye-form-content-scroll">
+    <view class="{{['eye-form-content', position]}}">
+        <view class="eye-form-content-item">
+            <view class="eye-form-input">
+                <number-input
+                    model:value="{{right}}"
+                    fixed="2"
+                />
+                <view class="unit">mmHg</view>
+            </view>
+        </view>
+        <view class="eye-form-content-item">
+            <view class="eye-form-input">
+                <number-input
+                    model:value="{{left}}"
+                    fixed="2"
+                />
+                <view class="unit">mmHg</view>
+            </view>
+        </view>
+    </view>
+</view>

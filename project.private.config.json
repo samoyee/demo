@@ -1,0 +1,60 @@
+{
+    "setting": {
+        "compileHotReLoad": false,
+        "preloadBackgroundData": false,
+        "urlCheck": false,
+        "autoAudits": false,
+        "skylineRenderEnable": false,
+        "lazyloadPlaceholderEnable": false
+    },
+    "condition": {
+        "miniprogram": {
+            "list": [
+                {
+                    "name": "编辑页",
+                    "pathName": "modules/patient/pages/add/index",
+                    "query": "patientId=4",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "检查输入页",
+                    "pathName": "modules/admin/pages/create-check/index",
+                    "query": "type=NORMAL&patientId=1234",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "检查详情页",
+                    "pathName": "modules/admin/pages/check-detail/index",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "医生详情",
+                    "pathName": "modules/doctor/pages/detail/index",
+                    "query": "id=0",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "用户首页",
+                    "pathName": "pages/index/index",
+                    "query": "",
+                    "launchMode": "default",
+                    "scene": null
+                },
+                {
+                    "name": "医生工作台",
+                    "pathName": "pages/index/index",
+                    "query": "doctor=true",
+                    "launchMode": "default",
+                    "scene": null
+                }
+            ]
+        }
+    },
+    "description": "项目私有配置文件。此文件中的内容将覆盖 project.config.json 中的相同字段。项目的改动优先同步到此文件中。详见文档：https://developers.weixin.qq.com/miniprogram/dev/devtools/projectconfig.html",
+    "libVersion": "2.33.0"
+}

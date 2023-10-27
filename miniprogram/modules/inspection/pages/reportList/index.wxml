@@ -1,0 +1,55 @@
+<view class="report-list__fixed">
+    <wux-tabs
+        class="report-list__tabs"
+        defaultCurrent="all"
+        bind:change="onTabChange"
+    >
+        <wux-tab
+            key=""
+            title="全部"
+        ></wux-tab>
+        <wux-tab
+            key="NORMAL"
+            title="常规检查"
+        ></wux-tab>
+        <wux-tab
+            key="SPECIAL"
+            title="特殊检查"
+        ></wux-tab>
+    </wux-tabs>
+</view>
+<refresher
+    id="report-list-refresher"
+    scroll-class="report-list__scroll"
+    bind:pulling="onPulling"
+    bind:refresh="onRefresh"
+    bind:loadmore="onLoadmore"
+    has-more="{{hasMore}}"
+>
+    <default-page
+        wx:if="{{showError}}"
+        errorType="{{errorType}}"
+        errorMsg="{{errorMsg}}"
+    />
+    <view wx:else>
+        <report-item
+            wx:for="{{list}}"
+            wx:key="id"
+            item="{{item}}"
+        />
+        <block wx:if="{{list.length > 0}}">
+            <view
+                wx:if="{{!hasMore}}"
+                class="report-list__has_more"
+            >
+                没有更多数据
+            </view>
+            <view
+                wx:else
+                class="report-list__has_more"
+            >
+                加载更多
+            </view>
+        </block>
+    </view>
+</refresher>

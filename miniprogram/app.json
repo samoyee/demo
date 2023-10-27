@@ -1,0 +1,114 @@
+{
+    "pages": [
+        "pages/index/index",
+        "pages/workbench/index",
+        "pages/my/index",
+        "pages/webview/index"
+    ],
+    "subPackages": [
+        {
+            "root": "modules/doctor/pages",
+            "pages": [
+                "detail/index"
+            ]
+        },
+        {
+            "root": "modules/search/pages",
+            "pages": [
+                "home/index"
+            ]
+        },
+        {
+            "root": "pages/appoint",
+            "pages": [
+                "index"
+            ]
+        },
+        {
+            "root": "pages/map",
+            "pages": [
+                "index"
+            ]
+        },
+        {
+            "root": "modules/admin/pages",
+            "pages": [
+                "patient-detail/index",
+                "patient-search/index",
+                "create-check/index"
+            ]
+        },
+        {
+            "root": "modules/patient/pages",
+            "pages": [
+                "add/index",
+                "medicalHistoryAdd/index"
+            ]
+        },
+        {
+            "root": "modules/inspection/pages",
+            "pages": [
+                "reportList/index",
+                "reportDetail/index"
+            ]
+        },
+        {
+            "root": "modules/points/pages",
+            "pages": [
+                "signin/index",
+                "shop-item-list/index",
+                "shop-item-detail/index",
+                "exchange-item-list/index"
+            ]
+        },
+        {
+            "root": "modules/fee/pages",
+            "pages": [
+                "standard/index"
+            ]
+        },
+        {
+            "root": "modules/guide/pages",
+            "pages": [
+                "list/index"
+            ]
+        },
+        {
+            "root": "modules/login/pages",
+            "pages": [
+                "index/index",
+                "privatePolicy/index",
+                "userPolicy/index"
+            ]
+        }
+    ],
+    "tabBar": {
+        "custom": true,
+        "list": [
+            {
+                "pagePath": "pages/index/index",
+                "text": "首页"
+            },
+            {
+                "pagePath": "pages/workbench/index",
+                "text": "工作台"
+            },
+            {
+                "pagePath": "pages/my/index",
+                "text": "我的"
+            }
+        ]
+    },
+    "usingComponents": {
+        "number-input": "/components/number-input/index",
+        "icon": "/components/icon/index"
+    },
+    "window": {
+        "backgroundTextStyle": "light",
+        "navigationBarBackgroundColor": "#fff",
+        "navigationBarTitleText": "",
+        "navigationBarTextStyle": "black"
+    },
+    "style": "v2",
+    "sitemapLocation": "sitemap.json"
+}
